@@ -29,7 +29,7 @@ The agent is to be trained on https://smashkarts.io/, you can visit the link and
   -  Amidst such sparse inputs with no explicit goal given, only bootstrapped self-supervised reward policies which are meta-learned inside each node of the agent's graph network.
 
 ## Results:
-A stitched mp4 is attached, it is stitched 30fps at 60fps so it is choppy(basically every second frame is missing). It is exactly what the agent "sees", you can also see online ads rolling in the video as that was what the model was seeing at one point while learning inside the browser.
+A stitched mp4 can be found [here's_a_gdrive_link_for_ya](https://drive.google.com/file/d/1ar2hUmIcORxy9vghKMptV9q4S6yjXgQi/view?usp=sharing), it is stitched 30fps at 60fps so it is choppy(basically every second frame is missing). It is exactly what the agent "sees", you can also see online ads rolling in the video as that was what the model was seeing at one point while learning inside the browser.
 
 *PS - on bottom left you can see a basic classifier at work(that the agent inherently learns). It tells when the agent(bot) is active/playing, and when I or a script is clicking to change levels/lobbies, hence bot is inactive in those stages(no outputs to keyboard).*
 *PPS - The above behaviour was not learned explicitly, it was learned inherently in the agent itself by pushing some latent priors of it towards orthogonal input/output manifolds embedded in a single space.*
