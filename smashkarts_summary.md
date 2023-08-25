@@ -17,7 +17,7 @@ The model's structure is not static, it is a learnable/growable hierarchical dir
 - Model takes as input cropped(3600x2000) raw pixels at 30fps, b/w 1-channel images and controls keyboard strikes, W-A-S-D, and space bar tap/hold.
 - Model takes as input a sequence of such images for a forward pass, and generates possible action/fire/move distributions.
 - The structure does not use back prop, the latent variables are updated through a novel formulation, that seeds all latent variables as evolved forms of similar 'daughter' graphs.
-- A single forward pass updates coefficients partially, converging till a point $\hat{P}$<sup>*</sup> where daughter graphs of each mother node reach a quasi-entropic function state while waiting for the next sequence of 30fps dense images to gather.
+- A single forward pass updates coefficients partially, converging till a point $\hat{P}$(called the Primary Field Lower Bound of the 'primary learning stage') where daughter graphs of each mother node reach a quasi-entropic function state while waiting for the next sequence of 30fps dense images to gather.
 - A single forward pass with N sequenced images, took N*22ms on a single Nvidia A100
 - The delayed learning('pondering', 'secondary field learning stage') takes average-case time(in ms) of $\frac{Np\(e-1\)}{\pi}$(log<sub>p</sub>d). 
   - *p* is a parameter that measures the growth of the mother+daughter graph in multiple dimensions(neuronal, inter-neuronal, intra-neuronal)). A model with p=5 is equivalent in size to a 500M parameter transformer encoder.
@@ -39,5 +39,3 @@ A stitched mp4 can be found [here's_a_gdrive_link_for_ya](https://drive.google.c
 
 *PS - On the bottom left you can see a basic classifier at work(that the agent inherently learns). It tells when the agent(bot) is active/playing, and when I or a script is clicking to change levels/lobbies, hence bot is inactive in those stages(no outputs to the keyboard).*
 *PPS - The above behavior was not learned explicitly, it was learned inherently in the agent itself by pushing some latent priors towards orthogonal Tr(input, output) transformed manifolds embedded in a single space.*
-
-*$\hat{P}$ is called the Primary Field Lower Bound of the 'primary learning stage'
